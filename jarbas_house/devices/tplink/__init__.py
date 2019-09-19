@@ -1,6 +1,5 @@
 from jarbas_house.devices import GenericDevice, RGBWBulb, RGBBulb, Bulb
-from jarbas_house.devices.tplink.kasa import discover_devices, find_host_from_device_name, SmartBulb, SmartPlug, \
-    tplink_hsv_to_hsv, hsv_to_tplink_hsv
+from simpleKasa import discover_devices, SmartPlug, SmartBulb, tplink_hsv_to_hsv, hsv_to_tplink_hsv
 from jarbas_house.colors import Color
 
 
@@ -194,6 +193,7 @@ def scan_kasa():
             else:
                 yield KasaBulb(d.host, d.alias, dict(d.sys_info))
         elif isinstance(d, SmartPlug):
+            # TODO
             pass
 
 
